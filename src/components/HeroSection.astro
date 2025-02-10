@@ -3,9 +3,9 @@ import Container from "./Container.astro"
 ---
 
 <div class="relative" id="home">
-    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
-        <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
-        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+    <div aria-hidden="true" class="absolute mt-[-5%] inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-40">
+        <div class="animated-background blur-[106px] h-16 bg-gradient-to-br from-primary to-purple-400 dark:to-yellow-400"></div>
+        <div class=" animated-background blur-[106px] h-16 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-yellow-300"></div>
     </div>
     <Container>
         <div class="relative pt-36 ml-auto">
@@ -71,6 +71,24 @@ import Container from "./Container.astro"
 </div>
 
 <style is:global>
+  .animated-background {
+    background-size: 400%;
+
+    -webkit-animation: animation 3s ease infinite;
+    -moz-animation: animation 3s ease infinite;
+    animation: animation 3s ease infinite;
+}
+
+@keyframes animation {
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+    
+    50% {
+        background-position: 100% 50%;
+    }
+}
   .shiny-sec {
       background: linear-gradient(
           135deg,
