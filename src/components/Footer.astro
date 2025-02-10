@@ -1,127 +1,44 @@
 ---
+import Container from "./Container.astro"
 
-
-type FooterContent = {
-  title: string
-  links: {
-    text: string
-    href: string
-    withIcon?: boolean
-    inNewTab?: boolean
-  }[]
-}
-
-
-const FOOTER_CONTENTS: FooterContent[] = [
-  {
-    title: 'Me',
-    links: [
-      { text: 'Projects', href: '/projects' },
-      { text: 'Blog', href: '/blog' },
-      { text: 'Bookmarks', href: '/bookmarks' }
-    ]
-  },
-  {
-    title: 'This site',
-    links: [
-      {
-        text: 'Analytics',
-        href: 'https://us.umami.is/share/Fmo9fhCyJtinAbWP/jestsee.com',
-        inNewTab: true
-      },
-      { text: 'RSS', href: '/rss.xml', inNewTab: true },
-      {
-        text: 'Source code',
-        href: 'https://github.com/jestsee/jestsee.com',
-        inNewTab: true
-      }
-    ]
-  },
-  {
-    title: 'Elsewhere',
-    links: [
-      {
-        text: 'Bluesky',
-        href: 'https://bsky.app/profile/jestsee.com',
-        inNewTab: true,
-        withIcon: true
-      },
-      {
-        text: 'Monkeytype',
-        href: 'https://monkeytype.com/profile/jestsee_',
-        inNewTab: true,
-        withIcon: true
-      }
-    ]
-  }
-]
 ---
-
-<footer class='relative mt-auto w-full'>
-  <div
-    class:list={[
-      '-z-10 h-48 w-3/5 opacity-25 blur-[160px]',
-      'absolute left-1/2 top-0 -translate-x-1/2 xs:top-24'
-    ]}
-  >
-  </div>
-
-  <!-- separator -->
-  <div
-    class:list={[
-      'h-[1px] w-full',
-      'bg-gradient-to-r from-zinc-800/25 via-zinc-800/75 to-zinc-800/25'
-    ]}
-  >
-  </div>
-
-  <!-- footer content -->
-  <div class='flex justify-center bg-zinc-950 pb-16 pt-20 max-[960px]:pb-8'>
-    <div
-      class:list={[
-        'flex items-stretch justify-between text-sm tracking-wide',
-        'w-full px-12 max-sm:px-4 min-[1200px]:w-[1200px]',
-        'gap-16 max-[960px]:flex-col-reverse'
-      ]}
-    >
-      <div class='space-y-24'>
-        <div class='space-y-3'>
-          <p class='text-lg leading-none text-zinc-200'>
-            <span class='tracking-widest'> 王安琪 </span>
-            <span class='mx-[2px]'>•</span> Jesica
-          </p>
-          <p
-            class='text-[13px] text-zinc-500'
-            
-          />
-        </div>
-        <div class='space-y-6'>
-          <p class='text-xs text-zinc-500'>
-            &copy; {new Date().getFullYear()} Jesica. All rights reserved.
-          </p>
-        </div>
-      </div>
-
-      <div
-        class:list={[
-          'flex flex-col justify-between max-xs:gap-16',
-          'max-[960px]:flex-col-reverse max-[960px]:gap-12',
-          'text-zinc-200'
-        ]}
-      >
-        <div
-          class='grid grid-cols-3 gap-y-16 max-[960px]:max-w-[480px] max-xs:grid-cols-2 sm:gap-24'
-        >
-          {
-            FOOTER_CONTENTS.map(({ title, links }) => (
-              <div class='space-y-4'>
-                <p class='text-zinc-200'>{title}</p>
-              </div>
-            ))
-          }
-        </div>
-     
-      </div>
+<footer>
+    <Container>
+    <div class="flex flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12text-center md:justify-between">
+        <p class="block font-semibold text-sm">
+            HW
+        </p>
+   
+      <ul class="flex flex-wrap items-center gap-y-2 gap-x-8">
+        <li>
+          <a
+            href="#"
+            class=""
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class=" text-sm"
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            class=" text-sm"
+          >
+            Projects
+          </a>
+        </li>
+      </ul>
     </div>
-  </div>
-</footer>
+    <p class="block mb-4 text-sm text-center text-slate-500 md:mb-0 border-t border-slate-600 mt-4 pt-4">
+      Copyright © 2025&nbsp; 
+      <a href="https://material-tailwind.com/" target="_blank" rel="noreferrer">HW</a>
+    </p>
+</Container>
+    </footer>
